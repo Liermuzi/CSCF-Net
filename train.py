@@ -58,25 +58,25 @@ from sklearn.metrics import (
 # CONFIG -- 修改路径即可
 # ============================================================
 
-X_TRAIN_PATH = r"D:\研究生毕设\SRL\feature_extract\raw\软标签new3对应的28维原始特征\train_28d.npy"
-X_VAL_PATH   = r"D:\研究生毕设\SRL\feature_extract\raw\软标签new3对应的28维原始特征\val_28d.npy"
+X_TRAIN_PATH = r"\train_28d.npy"
+X_VAL_PATH   = r"\val_28d.npy"
 
-Y_TRAIN_PATH = r"D:\研究生毕设\SRL\feature_extract\soft label\new3\train_labels20new3.npy"
-Y_VAL_PATH   = r"D:\研究生毕设\SRL\feature_extract\soft label\new3\val_labels20new3.npy"
+Y_TRAIN_PATH = r"\train_labels.npy"
+Y_VAL_PATH   = r"\val_labels.npy"
 
-CONF_TRAIN_PATH = r"D:\研究生毕设\SRL\feature_extract\soft label\new3\train_confnew3.npy"
-CONF_VAL_PATH   = r"D:\研究生毕设\SRL\feature_extract\soft label\new3\val_confnew3.npy"
+CONF_TRAIN_PATH = r"\train_conf.npy"
+CONF_VAL_PATH   = r"\val_conf.npy"
 
 OUTPUT_DIR = (
-    r"D:\研究生毕设\SRL\28维，最好性能\大修版\原标签原特征提取"
-    r"\cscf_ccm_consistency_5seed_final"
+    
+    r"\model"
 )
 
 SEEDS = [42, 52, 62, 72, 82]
 
 BATCH_SIZE = 32
 EPOCHS = 80
-PATIENCE = 6
+PATIENCE = 12
 NUM_WORKERS = 0
 
 FEAT_DIM = 28
@@ -1274,7 +1274,7 @@ def main():
 
         model_path = (
             seed_dir
-            / f"best_model_ccm_consistency_seed{seed}.pth"
+            / f"best_model_seed{seed}.pth"
         )
 
         for epoch_idx in range(EPOCHS):
