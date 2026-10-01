@@ -17,11 +17,7 @@ CCM:
 Loss:
     L = KL_soft + 0.2 * MSE_score + 0.1 * consistency
 
-Consistency:
-    MSE(
-        independent score-head prediction,
-        0.2*p_low + 0.5*p_mid + 0.8*p_high
-    )
+
 
 Important:
 - Uses TRAIN/VAL only. TEST is never touched here.
